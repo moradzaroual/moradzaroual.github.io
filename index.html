@@ -19,14 +19,24 @@
     <script type="module" crossorigin src="/assets/index-BZekV4g0.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-Bqb1rzso.css">
     <style>
-  /* تعديل حجم الصورة فقط فـ الهواتف الذكية */
+  /* تعديل دقيق للشاشات الصغيرات (الهواتف) */
   @media (max-width: 768px) {
-    /* كايستهدف الصور اللي كاينا فـ الـ Hero Section */
+    /* تكبير الصورة شوية وتقييد العرض بالنسبة المئوية */
     #root img {
-      max-width: 250px !important;
+      width: 80% !important;
+      max-width: 320px !important;
+      min-width: 260px !important;
       height: auto !important;
       margin: 0 auto !important;
-      display: block !important;
+      object-fit: contain !important;
+    }
+
+    /* نقص المساحات الفارغة (Padding / Margin) فـ الشاشة الصغيرة */
+    #root section, 
+    #root .hero-container {
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
+      min-height: auto !important;
     }
   }
 </style>

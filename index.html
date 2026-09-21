@@ -19,27 +19,35 @@
     <script type="module" crossorigin src="/assets/index-BZekV4g0.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-Bqb1rzso.css">
     <style>
-  /* استهداف الشاشات الخاصة بالهواتف الذكية فقط */
+  /* استهداف الشاشات ديال الهواتف فقط (أقل من 768px) */
   @media screen and (max-width: 768px) {
-    /* تكبير الصورة فـ التلفون باش تكون واضحة ومبيّنة الدقة */
-    #root img {
-      width: 90% !important;
-      max-width: 420px !important; /* كيسمح للصورة تكبر فـ التلافن الكبار */
-      min-width: 320px !important; /* كيحميها باش ما تصغارش فـ التلافن الصغار */
-      height: auto !important;
-      margin: 0 auto !important;
-      display: block !important;
-      object-fit: cover !important;
-      border-radius: 12px !important; /* اختياري: كيعطي حواف ناعمة */
+    
+    /* 1. إزالة جميع الحواشي والفراغات اللي شادّة الصورة من اليسار واليمين */
+    #root section,
+    #root header,
+    #root div[class*="hero"],
+    #root div[class*="container"] {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
     }
 
-    /* تقليل الحواشي والفرغات الفارغة حول الصورة فـ التلفون */
-    #root section, 
-    #root header,
-    #root div[class*="hero"] {
-      padding-top: 0.5rem !important;
-      padding-bottom: 0.5rem !important;
-      margin-top: 0 !important;
+    /* 2. تمديد الصورة من أقصى اليسار لـ أقصى اليمين (100% Full Width) */
+    #root img {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border-radius: 0 !important; /* ملغية جميع الحواف الداائرية باش تلاصق مع الشاشة */
+      object-fit: cover !important;
+      display: block !important;
+      position: relative !important; /* كيحمي الصورة باش ما تطلعش فوق الـ Navbar */
+      z-index: 1 !important;
     }
   }
 </style>

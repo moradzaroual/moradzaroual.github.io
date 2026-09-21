@@ -18,46 +18,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="module" crossorigin src="/assets/index-BZekV4g0.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-Bqb1rzso.css">
-   <style>
-  /* استهداف الهواتف فقط (أقل من 768px) */
   @media screen and (max-width: 768px) {
-    
-    /* 1. نقص الفراغ العمودي الزائد فـ Hero Section */
-    #root section, 
-    #root main,
-    #root header + div {
-      padding-top: 1rem !important;
-      padding-bottom: 1rem !important;
-      min-height: auto !important;
-    }
-
-    /* 2. تجريد الصندوق الحاضن للصورة من أي قيود عرض */
-    #root div:has(> img) {
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    /* 3. الخدعة البرمجية: إخراج الصورة من الصندوق وتمديدها من أقصى اليسار لأقصى اليمين */
-    #root img {
-      width: 100vw !important; /* تاخد 100% من عرض شاشة التلفون كاملا */
-      max-width: 100vw !important;
-      height: auto !important;
-      
-      /* إخراج الصورة من حدود الحاوية وتلصيقها فـ الجوانب */
-      position: relative !important;
-      left: 50% !important;
-      right: 50% !important;
-      margin-left: -50vw !important;
-      margin-right: -50vw !important;
-      
-      border-radius: 0 !important;
-      object-fit: cover !important;
-      display: block !important;
-    }
+  .hero-image {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-radius: 0;
+    object-fit: cover;
+    display: block;
   }
-</style>
+}
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFH9JNY7J0"></script>
 <script>

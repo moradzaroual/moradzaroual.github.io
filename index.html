@@ -42,26 +42,24 @@
   /* استهداف الهواتف فقط (أقل من 768px) */
   @media screen and (max-width: 768px) {
 
-    /* 1. إلغاء أي قيود على الارتفاع أو العرض فـ الصناديق الحاضنة للصورة */
-    #root section,
-    #root main,
-    #root div {
-      max-height: none !important;
-      height: auto !important;
-    }
-
-    /* 2. إظهار الصورة بالارتفاع والعرض الطبيعي ديالها 100% (Full Ratio) */
     #root img[src*="hero"],
     #root img[src*="headshot"],
     #root img[src*="homepage"] {
-      content: url('./assets/heroforphones.jpg') !important;
+      /* 1. إخفاء الصورة القديمة واستبدالها بالجديدة كـ background */
+      box-sizing: border-box !important;
+      background-image: url('./assets/heroforphones.jpg') !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+
+      /* 2. فرض أبعاد الصورة المربعة (1116x1116) */
       width: 100% !important;
-      height: auto !important; /* كايخلي الارتفاع يتحسب تلقائياً بالنسَبة الأصلية للصورة */
-      max-width: 100% !important;
-      max-height: none !important;
-      object-fit: unset !important; /* إلغاء أي تحكم فـ الأبعاد باش تبقى الصورة كيفما هي */
+      height: 0 !important;
+      padding-top: 100% !important; /* كتعطي نسبة 1:1 مربعة كاملة فـ جميع الشاشات */
+      
       display: block !important;
       margin: 0 auto !important;
+      border-radius: 0 !important;
     }
   }
 </style>

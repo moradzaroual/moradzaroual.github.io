@@ -38,6 +38,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="module" crossorigin src="/assets/index-BZekV4g0.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-Bqb1rzso.css">
+    <style>
+  /* تطبيق التغييرات فقط على الهواتف (Samsung, iPhone, Xiaomi, Redmi, Vivo, Oppo...) */
+  @media screen and (max-width: 768px) {
+    #root img {
+      /* 1. إظهار صورة التلفون المخصصة بدلاً من صورة الـ PC */
+      content: url('/assets/imageforphone.jpg') !important;
+
+      /* 2. إظهار التفاصيل كاملة والزوايا بدون أي قطع (No Cropping) */
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important; /* كيضمن أن الصورة تبان كاملة بدون ما يطير منها حتى جزء */
+      display: block !important;
+      margin: 0 auto !important;
+    }
+  }
+</style>
 
     <!-- Google Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFH9JNY7J0"></script>

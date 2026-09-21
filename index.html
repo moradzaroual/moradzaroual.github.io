@@ -19,24 +19,27 @@
     <script type="module" crossorigin src="/assets/index-BZekV4g0.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-Bqb1rzso.css">
     <style>
-  /* تعديل دقيق للشاشات الصغيرات (الهواتف) */
-  @media (max-width: 768px) {
-    /* تكبير الصورة شوية وتقييد العرض بالنسبة المئوية */
+  /* استهداف الشاشات الخاصة بالهواتف الذكية فقط */
+  @media screen and (max-width: 768px) {
+    /* تكبير الصورة فـ التلفون باش تكون واضحة ومبيّنة الدقة */
     #root img {
-      width: 80% !important;
-      max-width: 320px !important;
-      min-width: 260px !important;
+      width: 90% !important;
+      max-width: 420px !important; /* كيسمح للصورة تكبر فـ التلافن الكبار */
+      min-width: 320px !important; /* كيحميها باش ما تصغارش فـ التلافن الصغار */
       height: auto !important;
       margin: 0 auto !important;
-      object-fit: contain !important;
+      display: block !important;
+      object-fit: cover !important;
+      border-radius: 12px !important; /* اختياري: كيعطي حواف ناعمة */
     }
 
-    /* نقص المساحات الفارغة (Padding / Margin) فـ الشاشة الصغيرة */
+    /* تقليل الحواشي والفرغات الفارغة حول الصورة فـ التلفون */
     #root section, 
-    #root .hero-container {
-      padding-top: 1.5rem !important;
-      padding-bottom: 1.5rem !important;
-      min-height: auto !important;
+    #root header,
+    #root div[class*="hero"] {
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+      margin-top: 0 !important;
     }
   }
 </style>

@@ -38,24 +38,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="module" crossorigin src="/assets/index-BZekV4g0.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-Bqb1rzso.css">
-   <style>
+  <style>
   /* استهداف الهواتف فقط (أقل من 768px) */
   @media screen and (max-width: 768px) {
-    /* تطبيق صورة الهاتف على صورة الـ Hero وتكبيرها */
+
+    /* 1. إلغاء أي قيود على الارتفاع أو العرض فـ الصناديق الحاضنة للصورة */
+    #root section,
+    #root main,
+    #root div {
+      max-height: none !important;
+      height: auto !important;
+    }
+
+    /* 2. إظهار الصورة بالارتفاع والعرض الطبيعي ديالها 100% (Full Ratio) */
     #root img[src*="hero"],
     #root img[src*="headshot"],
     #root img[src*="homepage"] {
       content: url('./assets/imageforphone.jpg') !important;
       width: 100% !important;
+      height: auto !important; /* كايخلي الارتفاع يتحسب تلقائياً بالنسَبة الأصلية للصورة */
       max-width: 100% !important;
-      height: auto !important; /* كيحافظ على تناسق الارتفاع والعرض لتكون كبيرة */
+      max-height: none !important;
+      object-fit: unset !important; /* إلغاء أي تحكم فـ الأبعاد باش تبقى الصورة كيفما هي */
       display: block !important;
       margin: 0 auto !important;
-      object-fit: cover !important; /* كيخلي الصورة تعمر المساحة بالكامل بلا ما تصغار */
     }
   }
 </style>
-
     <!-- Google Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFH9JNY7J0"></script>
     <script>
